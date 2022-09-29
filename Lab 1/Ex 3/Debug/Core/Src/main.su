@@ -1,0 +1,10 @@
+main.c:95:8:LED_RED1_toggle	16	static
+main.c:64:5:main	24	static
+main.c:101:7:LED_GREEN1_toggle	16	static
+main.c:107:7:LED_YELLOW1_toggle	16	static
+main.c:113:7:LED_RED2_toggle	16	static
+main.c:119:7:LED_GREEN2_toggle	16	static
+main.c:125:7:LED_YELLOW2_toggle	16	static
+main.c:181:6:SystemClock_Config	72	static
+main.c:217:13:MX_GPIO_Init	32	static
+main.c:247:6:Error_Handler	4	static,ignoring_inline_asm
