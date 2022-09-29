@@ -91,7 +91,7 @@ int main(void)
 
   /* Infinite loop */
 
-  // Initiating 2 LEDs with opposite states
+  // Init 2 LEDs with opposite states
   HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
   HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET);
   while (1)
