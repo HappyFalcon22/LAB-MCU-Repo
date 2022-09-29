@@ -128,8 +128,10 @@ int main(void)
 	  HAL_GPIO_WritePin(LED_YELLOW2_GPIO_Port, LED_YELLOW2_Pin, RESET);
 	  HAL_GPIO_WritePin(LED_GREEN2_GPIO_Port, LED_GREEN2_Pin, SET);
 	}
+	// Function to display numbers on 7 LED segment
 	void display7SEG(int num)
 	{
+		// Use switch case syntax for every value of num
 		switch(num)
 		{
 		case 0:
@@ -227,7 +229,9 @@ int main(void)
 
    while (1)
    {
+	  // Display the counter each iteration
 	  display7SEG(count1);
+
  	  // For counter 1
  	  if ((count1 >= 0) && (count1 < 5))
  	  {
@@ -241,6 +245,7 @@ int main(void)
  	  {
  		  LED_YELLOW1_toggle();
  	  }
+
  	  // For counter 2
  	  if ((count2 >= 0) && (count2 < 3))
  	  {
@@ -256,6 +261,8 @@ int main(void)
  	  }
  	  // Add count indexes
  	  count1++; count2++;
+
+ 	  // Reset count indexes
  	  if (count1 >= 10)
  	  {
  		  count1 = 0;
@@ -265,6 +272,8 @@ int main(void)
  		  count2 = 0;
  	  }
  	  HAL_Delay(1000);
+
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

@@ -91,6 +91,8 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
+  	// Function to set all LEDs off
 	void clearAllClocks()
 	{
 	  HAL_GPIO_WritePin(LED_0_GPIO_Port, LED_0_Pin, SET);
@@ -106,6 +108,8 @@ int main(void)
 	  HAL_GPIO_WritePin(LED_10_GPIO_Port, LED_10_Pin, SET);
 	  HAL_GPIO_WritePin(LED_11_GPIO_Port, LED_11_Pin, SET);
 	}
+
+	// Function to set one LED on according to num value (0 - 11)
 	void setNumberOnClock(int num)
 	{
 		switch(num)
@@ -151,6 +155,7 @@ int main(void)
 		}
 
 	}
+	// Function to set one LED off according to num value (0 - 11)
 	void clearNumberOnClock(int num)
 		{
 			switch(num)
@@ -196,6 +201,7 @@ int main(void)
 			}
 
 		}
+	// A function to test the LEDS by turn on each LED
 	void test()
 	{
 		clearAllClocks();
@@ -207,22 +213,22 @@ int main(void)
 			HAL_Delay(500);
 		}
 	}
-	int hour = 0; // 12AM or 12PM
-	int minute = 0; // 0 - 59
-	int second = 0;
-	clearAllClocks();
-	setNumberOnClock(0);
+	int hour = 0; // From 0 - 11
+	int minute = 0; // From 0 - 59
+	int second = 0; // From 0 - 59
+	clearAllClocks(); // Turn off all LEDs at the beginning
+	setNumberOnClock(0); // Which set the time to 00:00:00 or 12:00:00
   while (1)
   {
-	  	second++;
+	  	second++; // Increment by 1 second
 		if (second == 60)
 		{
 			clearNumberOnClock(11);
-			second = 0; minute++;
+			second = 0; minute++; // Increase minute by 1
 			if (minute == 60)
 			{
 				clearNumberOnClock(11);
-				clearNumberOnClock(hour); //Clear the hour number
+				clearNumberOnClock(hour); // Clear the hour number
 				minute = 0; hour++;
 				if (hour == 12)
 				{
@@ -230,10 +236,12 @@ int main(void)
 				}
 			}
 		}
-		if (second % 5 == 0)
+		if (second % 5 == 0) // Whenever a new LED for seconds is on, clear the LED at the previous position
 			clearNumberOnClock(second / 5 - 1);
-		if (minute % 5 == 0)
+		if (minute % 5 == 0) // Whenever a new LED for minutes is on, clear the LED at the previous position
 			clearNumberOnClock(minute / 5 - 1);
+
+		// Function to set LEDs accoring to hour, minute and second
 		setNumberOnClock(second / 5);
 		setNumberOnClock(minute / 5);
 		setNumberOnClock(hour);

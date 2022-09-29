@@ -91,19 +91,25 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int count = 0; // Count index
+  int count = 0; // Counter index (runs from 0 to 9)
+
+  // Function to make LED_RED on while others are off
   void LED_RED_toggle()
   {
 	  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET);
 	  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
 	  HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, SET);
   }
+
+  // Function to make LED_GREEN on while others are off
   void LED_GREEN_toggle()
   {
 	  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
 	  HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
 	  HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, RESET);
   }
+
+  // Function to make LED_RED on while others are off
   void LED_YELLOW_toggle()
   {
 	  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
@@ -112,19 +118,23 @@ int main(void)
   }
   while (1)
   {
+	  /* When counter is from 0 to 4, the LED_RED on */
 	  if ((count >= 0) && (count < 5))
 	  {
 		  LED_RED_toggle();
 	  }
+	  /* When counter is from 5 to 7, the LED_GREEN on */
 	  if ((count >= 5) && (count < 8))
 	  {
 		  LED_GREEN_toggle();
 	  }
+	  /* When counter is from 8 to 10, the LED_YELLOW on */
 	  if ((count >= 8) && (count < 10))
 	  {
 		  LED_YELLOW_toggle();
 	  }
 	  count++;
+	  /* When counter is above 10, reset the counter to 0 */
 	  if (count >= 10)
 	  {
 		  count = 0;

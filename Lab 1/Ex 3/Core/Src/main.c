@@ -91,7 +91,8 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int count1 = 0, count2 = 0;
+  int count1 = 0, count2 = 0; // Two counter indexes, count1 for LED1s and count2 for LED2s
+
   void LED_RED1_toggle()
 	{
 	  HAL_GPIO_WritePin(LED_RED1_GPIO_Port, LED_RED1_Pin, RESET);
@@ -110,6 +111,7 @@ int main(void)
 	  HAL_GPIO_WritePin(LED_YELLOW1_GPIO_Port, LED_YELLOW1_Pin, RESET);
 	  HAL_GPIO_WritePin(LED_GREEN1_GPIO_Port, LED_GREEN1_Pin, SET);
 	}
+
 	void LED_RED2_toggle()
 	{
 	  HAL_GPIO_WritePin(LED_RED2_GPIO_Port, LED_RED2_Pin, RESET);
@@ -156,8 +158,11 @@ int main(void)
 	  {
 		  LED_RED2_toggle();
 	  }
+
 	  // Add count indexes
 	  count1++; count2++;
+
+	  // Reset count indexes
 	  if (count1 >= 10)
 	  {
 		  count1 = 0;

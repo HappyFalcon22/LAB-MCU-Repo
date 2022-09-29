@@ -92,7 +92,10 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
+  	// 2 counters, count1 for LED1s, count2 for LED2s
 	int count1 = 0, count2 = 0;
+
+	// Function to toggle each of LED1s
 	void LED_RED1_toggle()
 	{
 	HAL_GPIO_WritePin(LED_RED1_GPIO_Port, LED_RED1_Pin, RESET);
@@ -111,6 +114,8 @@ int main(void)
 	HAL_GPIO_WritePin(LED_YELLOW1_GPIO_Port, LED_YELLOW1_Pin, RESET);
 	HAL_GPIO_WritePin(LED_GREEN1_GPIO_Port, LED_GREEN1_Pin, SET);
 	}
+
+	// Function to toggle each of LED2s
 	void LED_RED2_toggle()
 	{
 	HAL_GPIO_WritePin(LED_RED2_GPIO_Port, LED_RED2_Pin, RESET);
@@ -129,6 +134,8 @@ int main(void)
 	HAL_GPIO_WritePin(LED_YELLOW2_GPIO_Port, LED_YELLOW2_Pin, RESET);
 	HAL_GPIO_WritePin(LED_GREEN2_GPIO_Port, LED_GREEN2_Pin, SET);
 	}
+
+	// Function to display in 7SEG 1
 	void display7SEG1(int num)
 	{
 		switch(num)
@@ -225,6 +232,8 @@ int main(void)
 			break;
 		}
 	}
+
+	// Function to display in 7SEG 2
 	void display7SEG2(int num)
 	{
 		switch(num)
@@ -357,6 +366,8 @@ int main(void)
 	  }
 	  // Add count indexes
 	  count1++; count2++;
+
+	  // Reset count indexes
 	  if (count1 >= 10)
 	  {
 		  count1 = 0;
