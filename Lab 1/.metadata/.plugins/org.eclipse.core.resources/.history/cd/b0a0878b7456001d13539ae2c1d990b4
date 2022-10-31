@@ -1,0 +1,24 @@
+/*
+ * button.c
+ *
+ *  Created on: Oct 28, 2022
+ *      Author: Admin
+ */
+#include "button.h"
+#include "main.h"
+
+int keyReg0 = NORMAL_STATE;
+int keyReg1 = NORMAL_STATE;
+int keyReg2 = NORMAL_STATE;
+int keyReg3 = NORMAL_STATE;
+
+int timeOutForKeyPress = 100;
+void subKeyProcess()
+{
+	if(keyReg3 == PRESSED_STATE)
+	{
+		HAL_GPIO_TogglePin(LED_RED_GPIO_Port, GPIO_Pin)
+	}
+
+}
+
