@@ -1,0 +1,10 @@
+../Core/Src/display.c:22:6:clear7SEG	8	static
+../Core/Src/display.c:26:6:display7SEG	16	static
+../Core/Src/display.c:71:6:initState	4	static
+../Core/Src/display.c:74:6:openEN	16	static
+../Core/Src/display.c:88:6:clearEN	8	static
+../Core/Src/display.c:95:6:displayClock	16	static
+../Core/Src/display.c:128:6:blinkLED	8	static
+../Core/Src/display.c:134:6:update7SEG	16	static
+../Core/Src/display.c:169:6:updateClock	4	static
+../Core/Src/display.c:191:6:updateClockBuffer	8	static

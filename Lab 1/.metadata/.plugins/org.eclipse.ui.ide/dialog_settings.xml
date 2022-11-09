@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="true"/>
+	</section>
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\Admin\Desktop\A\Lab 2\Ex 8"/>
+			<item value="C:\Users\Admin\Desktop\A\Lab 2\Ex 7"/>
+			<item value="C:\Users\Admin\Desktop\A\Lab 2\Ex 6"/>
+			<item value="C:\Users\Admin\Desktop\A\Lab 2\Ex 5"/>
+			<item value="C:\Users\Admin\Desktop\A\Lab 2\Ex 4"/>
+			<item value="C:\Users\Admin\Desktop\A\Lab 2\Ex 3"/>
+			<item value="C:\Users\Admin\Desktop\A\Lab 2\Ex 2"/>
+			<item value="C:\Users\Admin\Desktop\A\Lab 2\Ex 1"/>
+			<item value="C:\Users\Admin\Desktop\Lab2-lab2_ex2\Lab2"/>
+			<item value="C:\Users\Admin\Desktop\A\Lab 2"/>
+			<item value="C:\Users\Admin\Desktop\B\MCU_MIDTERM"/>
+			<item value="C:\Users\Admin\Desktop\B\MCU_MIDTERM\MIDTERM"/>
+			<item value="C:\Users\Admin\Desktop\B"/>
+			<item value="C:\Users\Admin\Desktop\Study Material\Lab MCU\Lab 1"/>
+		</list>
+	</section>
+</section>

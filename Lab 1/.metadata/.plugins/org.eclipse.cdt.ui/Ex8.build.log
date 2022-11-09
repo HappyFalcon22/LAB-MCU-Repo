@@ -1,0 +1,20 @@
+20:11:15 **** Incremental Build of configuration Debug for project Ex8 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ex8.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Admin\Desktop\A\Lab 2\Ex 8\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ex8.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ex8.elf
+ 
+arm-none-eabi-size   Ex8.elf 
+arm-none-eabi-objdump -h -S  Ex8.elf  > "Ex8.list"
+arm-none-eabi-objcopy  -O ihex  Ex8.elf  "Ex8.hex"
+   text	   data	    bss	    dec	    hex	filename
+   7900	     32	   1664	   9596	   257c	Ex8.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ex8.hex
+Finished building: Ex8.list
+ 
+ 
+
+20:11:16 Build Finished. 0 errors, 0 warnings. (took 920ms)
+

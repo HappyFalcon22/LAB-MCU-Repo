@@ -1,0 +1,6 @@
+../Core/Src/display.c:21:6:clear7SEG	8	static
+../Core/Src/display.c:25:6:display7SEG	16	static
+../Core/Src/display.c:71:6:blinkLED	8	static
+../Core/Src/display.c:77:6:changeEN	8	static
+../Core/Src/display.c:122:6:update7SEG	16	static
+../Core/Src/display.c:145:6:updateClockBuffer	4	static

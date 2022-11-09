@@ -1,0 +1,22 @@
+19:53:31 **** Incremental Build of configuration Debug for project Ex7 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/display.d" -MT"Core/Src/display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/display.o"
+arm-none-eabi-gcc "../Core/Src/init.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/init.d" -MT"Core/Src/init.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/init.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Ex7.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Admin\Desktop\A\Lab 2\Ex 7\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ex7.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ex7.elf
+ 
+arm-none-eabi-size   Ex7.elf 
+arm-none-eabi-objdump -h -S  Ex7.elf  > "Ex7.list"
+arm-none-eabi-objcopy  -O ihex  Ex7.elf  "Ex7.hex"
+   text	   data	    bss	    dec	    hex	filename
+   7896	     52	   1652	   9600	   2580	Ex7.elf
+Finished building: default.size.stdout
+ 
+Finished building: Ex7.hex
+Finished building: Ex7.list
+ 
+ 
+
+19:53:32 Build Finished. 0 errors, 0 warnings. (took 1s.110ms)
+

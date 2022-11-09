@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="TIME_INVOKE_AUTO"/>
+		<item key="wrap" value="false"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="true"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="10000"/>
+			<item value="count_long_pressed"/>
+			<item value="count"/>
+			<item value="AUTO"/>
+			<item value="LONG_PRESSED_DEC"/>
+			<item value="LONG_PRESSED_INC"/>
+			<item value="DEC"/>
+			<item value="INC"/>
+			<item value="RESET_STATE"/>
+			<item value="LONG_PRESSED_DECREASED"/>
+			<item value="LONG_PRESSED_I"/>
+			<item value="LONG_PRESSED_INCREASED"/>
+			<item value="index"/>
+			<item value="KeyReg"/>
+			<item value="PRESSED_STATE"/>
+		</list>
+		<list key="replacehistory">
+			<item value="TIME_INVOKE_AUTO"/>
+			<item value="counter_long_pressed"/>
+			<item value="counter"/>
+			<item value="AUTO_DROPDOWN"/>
+			<item value="AUTO_DECREASED"/>
+			<item value="AUTO_INCREASED"/>
+			<item value="DECREASED"/>
+			<item value="INCREASED"/>
+			<item value="RESET"/>
+			<item value="button_index"/>
+			<item value="keyReg"/>
+			<item value="PRESSED"/>
+			<item value="NORMAL"/>
+			<item value="flag_long_pressed"/>
+			<item value="flag_pressed"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="1265"/>
+		<item key="DIALOG_Y_ORIGIN" value="368"/>
+		<item key="DIALOG_WIDTH" value="414"/>
+		<item key="DIALOG_HEIGHT" value="454"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+</section>

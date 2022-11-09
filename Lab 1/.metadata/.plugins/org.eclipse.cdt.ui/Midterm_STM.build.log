@@ -1,0 +1,66 @@
+22:20:29 **** Incremental Build of configuration Debug for project Midterm_STM ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/led_display.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/led_display.d" -MT"Core/Src/led_display.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/led_display.o"
+../Core/Src/led_display.c: In function 'display7SEG':
+../Core/Src/led_display.c:13:21: error: 'SEG_0_GPIO_PORT' undeclared (first use in this function); did you mean 'SEG_0_GPIO_Port'?
+   13 |   HAL_GPIO_WritePin(SEG_0_GPIO_PORT, SEG_0_Pin, RESET);
+      |                     ^~~~~~~~~~~~~~~
+      |                     SEG_0_GPIO_Port
+../Core/Src/led_display.c:13:21: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/led_display.c:14:21: error: 'SEG_1_GPIO_PORT' undeclared (first use in this function); did you mean 'SEG_1_GPIO_Port'?
+   14 |   HAL_GPIO_WritePin(SEG_1_GPIO_PORT, SEG_1_Pin, RESET);
+      |                     ^~~~~~~~~~~~~~~
+      |                     SEG_1_GPIO_Port
+../Core/Src/led_display.c:15:21: error: 'SEG_2_GPIO_PORT' undeclared (first use in this function); did you mean 'SEG_2_GPIO_Port'?
+   15 |   HAL_GPIO_WritePin(SEG_2_GPIO_PORT, SEG_2_Pin, RESET);
+      |                     ^~~~~~~~~~~~~~~
+      |                     SEG_2_GPIO_Port
+../Core/Src/led_display.c:16:21: error: 'SEG_3_GPIO_PORT' undeclared (first use in this function); did you mean 'SEG_3_GPIO_Port'?
+   16 |   HAL_GPIO_WritePin(SEG_3_GPIO_PORT, SEG_3_Pin, RESET);
+      |                     ^~~~~~~~~~~~~~~
+      |                     SEG_3_GPIO_Port
+../Core/Src/led_display.c:17:21: error: 'SEG_4_GPIO_PORT' undeclared (first use in this function); did you mean 'SEG_4_GPIO_Port'?
+   17 |   HAL_GPIO_WritePin(SEG_4_GPIO_PORT, SEG_4_Pin, RESET);
+      |                     ^~~~~~~~~~~~~~~
+      |                     SEG_4_GPIO_Port
+../Core/Src/led_display.c:18:21: error: 'SEG_5_GPIO_PORT' undeclared (first use in this function); did you mean 'SEG_5_GPIO_Port'?
+   18 |   HAL_GPIO_WritePin(SEG_5_GPIO_PORT, SEG_5_Pin, RESET);
+      |                     ^~~~~~~~~~~~~~~
+      |                     SEG_5_GPIO_Port
+../Core/Src/led_display.c:19:21: error: 'SEG_6_GPIO_PORT' undeclared (first use in this function); did you mean 'SEG_6_GPIO_Port'?
+   19 |   HAL_GPIO_WritePin(SEG_6_GPIO_PORT, SEG_6_Pin, SET);
+      |                     ^~~~~~~~~~~~~~~
+      |                     SEG_6_GPIO_Port
+../Core/Src/led_display.c:22:32: error: 'SEG0_Pin' undeclared (first use in this function); did you mean 'SEG_0_Pin'?
+   22 |   HAL_GPIO_WritePin(SEG7_PORT, SEG0_Pin, SET);
+      |                                ^~~~~~~~
+      |                                SEG_0_Pin
+../Core/Src/led_display.c:23:32: error: 'SEG1_Pin' undeclared (first use in this function); did you mean 'SEG_1_Pin'?
+   23 |   HAL_GPIO_WritePin(SEG7_PORT, SEG1_Pin, RESET);
+      |                                ^~~~~~~~
+      |                                SEG_1_Pin
+../Core/Src/led_display.c:24:32: error: 'SEG2_Pin' undeclared (first use in this function); did you mean 'SEG_2_Pin'?
+   24 |   HAL_GPIO_WritePin(SEG7_PORT, SEG2_Pin, RESET);
+      |                                ^~~~~~~~
+      |                                SEG_2_Pin
+../Core/Src/led_display.c:25:32: error: 'SEG3_Pin' undeclared (first use in this function); did you mean 'SEG_3_Pin'?
+   25 |   HAL_GPIO_WritePin(SEG7_PORT, SEG3_Pin, SET);
+      |                                ^~~~~~~~
+      |                                SEG_3_Pin
+../Core/Src/led_display.c:26:32: error: 'SEG4_Pin' undeclared (first use in this function); did you mean 'SEG_4_Pin'?
+   26 |   HAL_GPIO_WritePin(SEG7_PORT, SEG4_Pin, SET);
+      |                                ^~~~~~~~
+      |                                SEG_4_Pin
+../Core/Src/led_display.c:27:32: error: 'SEG5_Pin' undeclared (first use in this function); did you mean 'SEG_5_Pin'?
+   27 |   HAL_GPIO_WritePin(SEG7_PORT, SEG5_Pin, SET);
+      |                                ^~~~~~~~
+      |                                SEG_5_Pin
+../Core/Src/led_display.c:28:32: error: 'SEG6_Pin' undeclared (first use in this function); did you mean 'SEG_6_Pin'?
+   28 |   HAL_GPIO_WritePin(SEG7_PORT, SEG6_Pin, SET);
+      |                                ^~~~~~~~
+      |                                SEG_6_Pin
+make: *** [Core/Src/subdir.mk:49: Core/Src/led_display.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+
+22:20:30 Build Failed. 15 errors, 0 warnings. (took 375ms)
+
