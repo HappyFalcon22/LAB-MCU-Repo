@@ -1,0 +1,4 @@
+../Core/Src/display_7SEG.c:13:6:clear7SEG	8	static
+../Core/Src/display_7SEG.c:17:6:display7SEG	16	static
+../Core/Src/display_7SEG.c:63:6:blink_led	8	static
+../Core/Src/display_7SEG.c:70:6:change_enable	8	static
