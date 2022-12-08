@@ -1089,3 +1089,51 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-10-28 10:01:10.428
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2022-12-08 11:57:27.190 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-12-08 11:57:41.811
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-12-08 11:57:41.914
+!MESSAGE Log4j initialized with config file C:\Users\Admin\Desktop\A\Lab 1\.metadata\.log4j.xml
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2022-12-08 11:57:48.660
+!MESSAGE Removing PartDescriptorImpl with the "org.eclipse.search.SearchResultView" id and the "Classic Search" label.It points to the non available "bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" class. Bundle might have been uninstalled
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-12-08 11:57:58.512
+!MESSAGE Indexed 'Traffic_Lights' (22 sources, 102 headers) in 3.65 sec: 7,435 declarations; 35,533 references; 2 unresolved inclusions; 37 syntax errors; 190 unresolved names (0.44%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-12-08 11:58:01.037
+!MESSAGE Indexed 'Ex 1' (38 sources, 142 headers) in 2.5 sec: 8,497 declarations; 30,683 references; 2 unresolved inclusions; 36 syntax errors; 190 unresolved names (0.48%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-12-08 11:58:03.675
+!MESSAGE Indexed 'Ex 2' (38 sources, 154 headers) in 2.61 sec: 8,636 declarations; 31,373 references; 2 unresolved inclusions; 36 syntax errors; 190 unresolved names (0.47%)
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-12-08 11:58:05.477
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-12-08 11:58:06.228
+!MESSAGE Indexed 'Ex 3' (38 sources, 167 headers) in 2.53 sec: 8,644 declarations; 31,631 references; 2 unresolved inclusions; 36 syntax errors; 190 unresolved names (0.47%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-12-08 11:58:08.738
+!MESSAGE Indexed 'Ex 4' (38 sources, 156 headers) in 2.48 sec: 8,650 declarations; 33,387 references; 2 unresolved inclusions; 36 syntax errors; 190 unresolved names (0.45%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-12-08 11:58:10.849
+!MESSAGE Indexed 'Ex 5' (38 sources, 154 headers) in 2.08 sec: 8,654 declarations; 35,013 references; 2 unresolved inclusions; 36 syntax errors; 190 unresolved names (0.43%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-12-08 11:58:13.655
+!MESSAGE Indexed 'Ex 6' (38 sources, 153 headers) in 2.78 sec: 8,710 declarations; 31,815 references; 2 unresolved inclusions; 36 syntax errors; 190 unresolved names (0.47%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-12-08 11:58:16.719
+!MESSAGE Indexed 'STM_Ex1' (38 sources, 160 headers) in 3.04 sec: 10,969 declarations; 62,451 references; 2 unresolved inclusions; 36 syntax errors; 190 unresolved names (0.26%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-12-08 11:58:18.977
+!MESSAGE Indexed 'STM_Ex2' (37 sources, 126 headers) in 2.24 sec: 8,224 declarations; 51,372 references; 0 unresolved inclusions; 1 syntax errors; 4 unresolved names (0.0067%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-12-08 11:59:04.482
+!MESSAGE Indexed 'Lab 5' (17 sources, 78 headers) in 1.61 sec: 3,631 declarations; 13,033 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.012%)
