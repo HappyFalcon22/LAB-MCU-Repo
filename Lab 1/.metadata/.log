@@ -1137,3 +1137,14 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2022-12-08 11:59:04.482
 !MESSAGE Indexed 'Lab 5' (17 sources, 78 headers) in 1.61 sec: 3,631 declarations; 13,033 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.012%)
+
+!ENTRY org.eclipse.ui.ide 4 4 2022-12-08 13:42:35.974
+!MESSAGE Problems saving workspace
+
+!ENTRY org.eclipse.ui.ide 2 1 2022-12-08 13:42:35.980
+!MESSAGE Problems occurred while trying to save the state of the workbench.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2022-12-08 13:42:35.980
+!MESSAGE The project description file (.project) for 'Lab 4' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-12-08 13:42:36.360
+!MESSAGE The workspace will exit with unsaved changes in this session.
