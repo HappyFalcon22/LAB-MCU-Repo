@@ -1,0 +1,30 @@
+/*
+ * software_timer.c
+ *
+ *  Created on: Dec 9, 2022
+ *      Author: Admin
+ */
+#include "software_timer.h"
+
+#define CLOCK_TICK	10
+
+int buzzer_flag = 0;
+int buzzer_counter = 0;
+
+void setBuzzer(int duration)
+{
+	buzzer_counter = duration;
+	buzzer_flag = 0;
+}
+
+void timerRun()
+{
+	if (buzzer_counter > 0)
+	{
+		buzzer_counter--;
+		if (buzzer_counter <= 0)
+			buzzer_flag = 1;
+	}
+}
+
+

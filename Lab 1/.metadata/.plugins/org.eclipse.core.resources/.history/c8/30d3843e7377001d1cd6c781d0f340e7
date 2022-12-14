@@ -1,0 +1,19 @@
+/*
+ * buzzer.h
+ *
+ *  Created on: Dec 9, 2022
+ *      Author: Admin
+ */
+
+#ifndef INC_BUZZER_H_
+#define INC_BUZZER_H_
+#include "main.h"
+
+extern int value;
+extern int step;
+extern int delay;
+extern TIM_HandleTypeDef htim3;
+
+void buzzer_run();
+
+#endif /* INC_BUZZER_H_ */

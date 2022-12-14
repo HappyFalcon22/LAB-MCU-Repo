@@ -1,0 +1,42 @@
+/*
+ * buzzer.c
+ *
+ *  Created on: Dec 9, 2022
+ *      Author: Admin
+ */
+#include "buzzer.h"
+
+#define	START	100
+#define	OFF		0
+#define STEP_UNIT	10
+
+// Initial config
+int value[2] = {START, OFF};
+int delay = 500;
+int step = 0;
+int i = 0;
+void buzzerRun()
+{
+	if (buzzer_flag == 1)
+	{
+		setBuzzer(delay);
+		if (i == 0)
+		{
+			value[0] = START + step;
+			step += STEP_UNIT;
+			__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_3, value[i]);
+		}
+		else
+			__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_3, value[i]);
+		i = (i + 1) % 2;
+		delay = delay - STEP_UNIT;
+		if (value[0] >= 300)
+		{
+			value[0] = START;
+			step = 0;
+			delay = 500;
+		}
+	}
+}
+
+

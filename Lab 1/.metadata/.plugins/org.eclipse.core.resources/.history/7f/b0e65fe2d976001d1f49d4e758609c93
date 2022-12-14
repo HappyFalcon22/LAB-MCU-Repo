@@ -1,0 +1,47 @@
+/*
+ * global.h
+ *
+ *  Created on: Dec 8, 2022
+ *      Author: Admin
+ */
+
+#ifndef INC_GLOBAL_H_
+#define INC_GLOBAL_H_
+#include "main.h"
+#include "fsm_command_parser.h"
+#include "fsm_uart_communication.h"
+#include "software_timer.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+#define CLOCK_TICK	10
+#define MAX_BUFFER_SIZE	100
+
+extern UART_HandleTypeDef huart2;
+extern ADC_HandleTypeDef hadc1;
+
+extern int command_flag;
+
+enum status
+{
+	INIT = 0,
+	START = 1,			// When typing "#"
+	R = 2,				// When typing "R"
+	S = 3,				// When typing "S"
+	T = 4,				// When typing "T"
+	O = 5,				// When typing "O"
+	K = 6,				// When typing "K"
+	WRONG_SYNTAX = 7,	// When typing some wrong chars
+	END = 10			// When typing "!"
+};
+
+extern enum status state;
+
+extern int temp;
+extern int buffer[MAX_BUFFER_SIZE];
+extern int buffer_flag;
+extern int index_buffer;
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart);
+
+
+#endif /* INC_GLOBAL_H_ */

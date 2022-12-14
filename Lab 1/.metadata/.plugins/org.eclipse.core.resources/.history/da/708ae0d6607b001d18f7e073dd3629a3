@@ -1,0 +1,66 @@
+/*
+ * fsm_uart_communication.c
+ *
+ *  Created on: Dec 8, 2022
+ *      Author: Admin
+ */
+#include "global.h"
+
+uint32_t temp_ADC_value = 0;
+
+void uart_communication_fsm()
+{
+	switch(state_uart)
+	{
+	case INIT_UART:
+		if (parse_flag == 1)
+			state_uart = DATA;
+		break;
+	case DATA:
+		setTimer(UART_TIMEOUT);
+		switch(cmd)
+		{
+		case none:
+			break;
+		case RST:
+			// Read ADC_Value
+			temp_ADC_value = HAL_ADC_GetValue(&hadc1);
+			ADC_value = temp_ADC_value;
+			char str1[100];
+			HAL_UART_Transmit(&huart2, (void *) str1, sprintf(str1, "%d\n", ADC_value), 1000);
+			// To STANDBY state
+			state_uart = STANDBY;
+			parse_flag = 0;
+			break;
+		case OK:;
+			// End communication
+			char str2[] = "\r\nCommunication End\r\n";
+			HAL_UART_Transmit(&huart2, str2, sizeof(str2), 1000);
+			parse_flag = 0;
+			state_uart = UART_END;
+			break;
+		}
+		break;
+	case STANDBY:;
+		// Timeout
+		if (timer_flag == 1)
+		{
+			// Print the old value
+			char str[100];
+			HAL_UART_Transmit(&huart2, (void *) str, sprintf(str, "%d\n", temp_ADC_value), 1000);
+			break;
+		}
+		if (parse_flag == 1)
+		{
+			state_uart = DATA;
+			break;
+		}
+		break;
+	case UART_END:
+		state = INIT_UART;
+		break;
+	default:
+		break;
+	}
+}
+

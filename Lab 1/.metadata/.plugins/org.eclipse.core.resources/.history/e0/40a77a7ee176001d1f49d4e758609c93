@@ -1,0 +1,113 @@
+/*
+ * fsm_commang_parser.c
+ *
+ *  Created on: Dec 8, 2022
+ *      Author: Admin
+ */
+
+#include "global.h"
+uint32_t ADC_value = 0;
+
+enum identify cmd = none;
+
+void command_parser_fsm()
+{
+	switch(state)
+	{
+	case INIT:
+		command_flag = 0;
+		cmd = none;
+		state = START;
+		break;
+	case START:
+		if (buffer_flag == 1)
+		{
+			buffer_flag = 0;
+			int received = buffer[index_buffer - 1];
+			if (received == 33)
+				state = R_O;
+			else
+				state = WRONG_SYNTAX;
+		}
+		break;
+	case R_O:
+		if (buffer_flag == 1)
+		{
+			buffer_flag = 0;
+			int received = buffer[index_buffer - 1];
+			if (received == 82) // Type "S"
+				state = S;
+			else
+			{
+				if (received == 79) // Type "O"
+					state = K;
+				else
+					state = WRONG_SYNTAX;
+			}
+		}
+		break;
+	case S:
+		cmd = RST;
+		if (buffer_flag == 1)
+		{
+			buffer_flag = 0;
+			int received = buffer[index_buffer - 1];
+			if (received == 83)
+				state = T;
+			else
+				state = WRONG_SYNTAX;
+		}
+		break;
+	case T:
+		if (buffer_flag == 1)
+		{
+			buffer_flag = 0;
+			int received = buffer[index_buffer - 1];
+			if (received == 84)
+				state = END;
+			else
+				state = WRONG_SYNTAX;
+		}
+		break;
+	case K:
+		cmd = OK;
+		if (buffer_flag == 1)
+		{
+			buffer_flag = 0;
+			int received = buffer[index_buffer - 1];
+			if (received == 75)
+				state = END;
+			else
+				state = WRONG_SYNTAX;
+		}
+		break;
+	case END:
+		if (buffer_flag == 1)
+		{
+			buffer_flag = 0;
+			int received = buffer[index_buffer - 1];
+			if (received == 35)		// Type "!"
+				state = COMPLETE;
+			else
+				state = WRONG_SYNTAX;
+		}
+		break;
+	case WRONG_SYNTAX:;
+		char str[] = "Type again\r\n";
+		HAL_UART_Transmit(&huart2, str, sizeof(str), 1000);
+		state = INIT;
+		break;
+	case COMPLETE:;
+		command_flag = 1;
+		char str1[] = "Completed : !RST#\r\n";
+		char str2[] = "Completed : !OK#\r\n";
+		if (cmd == RST)
+			HAL_UART_Transmit(&huart2, str1, sizeof(str1), 1000);
+		else if (cmd == OK)
+			HAL_UART_Transmit(&huart2, str2, sizeof(str2), 1000);
+		state = INIT;
+		break;
+	default:
+		break;
+	}
+}

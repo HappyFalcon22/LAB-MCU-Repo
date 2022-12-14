@@ -1,0 +1,87 @@
+/*
+ * fsm_commang_parser.c
+ *
+ *  Created on: Dec 8, 2022
+ *      Author: Admin
+ */
+
+#include "fsm_command_parser.h"
+#include <stdio.h>
+uint32_t ADC_value = 0;
+
+void command_parser_fsm()
+{
+	switch(state)
+	{
+	case INIT:
+		state = START;
+		break;
+	case START:
+		if (buffer_flag == 1)
+		{
+			int received = buffer[index_buffer - 1];
+			if (received == 35)
+				state = R;
+			else
+				state = WRONG_SYNTAX;
+		}
+		break;
+	case R_O:
+		if (buffer_flag == 1)
+		{
+			int received = buffer[index_buffer - 1];
+			if (received == 82) // Type "S"
+				state = S;
+			else
+			{
+				if (received == 79) // Type "O"
+					state = K;
+				else
+					state = WRONG_SYNTAX;
+			}
+		}
+		break;
+	case S:
+		if (buffer_flag == 1)
+		{
+			int received = buffer[index_buffer - 1];
+			if (received == 83)
+				state = T;
+			else
+				state = WRONG_SYNTAX;
+		}
+		break;
+	case T:
+		if (buffer_flag == 1)
+		{
+			int received = buffer[index_buffer - 1];
+			if (received == 84)
+				state = END;
+			else
+				state = WRONG_SYNTAX;
+		}
+		break;
+	case K:
+		if (buffer_flag == 1)
+		{
+			int received = buffer[index_buffer - 1];
+			if (received == 75)
+				state = END;
+			else
+				state = WRONG_SYNTAX;
+		}
+		break;
+	case END:
+		str[] = "Completed\r\n";
+		HAL_UART_Transmit(&huart2, str, sizeof(str), 1000);
+		state = INIT;
+		break;
+	case WRONG_SYNTAX:
+		char str[] = "Type again\r\n";
+		HAL_UART_Transmit(&huart2, str, sizeof(str), 1000);
+		state = INIT;
+		break;
+	default:
+		break;
+	}
+}

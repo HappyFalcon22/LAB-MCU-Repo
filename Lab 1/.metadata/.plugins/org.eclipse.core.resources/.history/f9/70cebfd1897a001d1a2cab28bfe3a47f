@@ -1,0 +1,29 @@
+/*
+ * buzzer.h
+ *
+ *  Created on: Dec 9, 2022
+ *      Author: Admin
+ */
+
+#ifndef INC_BUZZER_H_
+#define INC_BUZZER_H_
+#include "main.h"
+#include "software_timer.h"
+
+#define	START	100
+#define	OFF		0
+#define STEP_UNIT	1
+#define const BASE_TIME		15
+#define	const BASE_DELAY	500
+#define const LAST_DELAY	50
+
+extern int value[2];
+extern int step;
+extern int delay;
+extern int time;
+extern TIM_HandleTypeDef htim3;
+
+void buzzerRun();
+void timer();
+
+#endif /* INC_BUZZER_H_ */

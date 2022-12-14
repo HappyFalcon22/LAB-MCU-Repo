@@ -1,0 +1,25 @@
+/*
+ * buzzer.c
+ *
+ *  Created on: Dec 9, 2022
+ *      Author: Admin
+ */
+#include "buzzer.h"
+
+#define	START	100
+#define	OFF		0
+#define STEP_UNIT	10
+
+int value = OFF;
+int step = 0;
+int delay = 500; // Initial delay
+
+void buzzerRun()
+{
+	if (buzzer_flag == 1)
+	{
+		setBuzzer(delay);
+		if (value )
+	}
+}
+

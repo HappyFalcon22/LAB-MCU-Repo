@@ -1,0 +1,45 @@
+/*
+ * buzzer.c
+ *
+ *  Created on: Dec 9, 2022
+ *      Author: Admin
+ */
+#include "buzzer.h"
+
+#define	START	100
+#define	OFF		0
+#define STEP_UNIT	1
+#define BASE_TIME	15
+#define BASE_DELAY	500
+
+// Initial config
+int value[2] = {START, OFF};
+int delay = BASE_DELAY;
+int i = 0;
+int time = 15;
+void timer()
+{
+	if (timer_flag == 1)
+	{
+		time--;
+		if (time <= 0)
+			time = BASE_TIME;
+	}
+}
+
+void buzzerRun()
+{
+	if (buzzer_flag == 1)
+	{
+		setBuzzer(delay);
+		__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_3, value[i]);
+		i = (i + 1) % 2;
+		int ratio = BASE_TIME / time;
+		if (ratio == 2)
+			delay = BASE_DELAY / 2;
+		if (ratio == 1)
+			delay = BASE_DELAY / 4;
+	}
+}
+
+

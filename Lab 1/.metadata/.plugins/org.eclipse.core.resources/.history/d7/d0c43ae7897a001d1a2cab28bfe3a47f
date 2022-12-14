@@ -1,0 +1,42 @@
+/*
+ * buzzer.c
+ *
+ *  Created on: Dec 9, 2022
+ *      Author: Admin
+ */
+#include "buzzer.h"
+
+// Initial config
+int value[2] = {START, OFF};
+int delay = BASE_DELAY;
+int i = 0;
+int time = 15;
+
+// Set a linear equation for the speed of the buzzer
+// Take 2 points : (time, delay) = {(BASE_TIME, BASE_DELAY); (1, LAST_DELAY)}
+// Built the coefficients a, b of : y = ax + b
+
+int a = (BASE_DELAY - LAST_DELAY) / (BASE_TIME - 1);
+int b = LAST_DELAY - a;
+
+void buzzerRun()
+{
+	if (timer_flag == 1)
+	{
+		setTimer(1000);
+		time--;
+		if (time <= 0)
+			time = BASE_TIME;
+	}
+	if (buzzer_flag == 1)
+	{
+		setBuzzer(delay);
+		__HAL_TIM_SetCompare(&htim3, TIM_CHANNEL_3, value[i]);
+		i = (i + 1) % 2;
+
+		// This is the equation with desired coefficients
+		delay = a * time + b;
+	}
+}
+
+

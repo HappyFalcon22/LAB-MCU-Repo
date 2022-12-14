@@ -1,0 +1,13 @@
+/*
+ * global.c
+ *
+ *  Created on: Dec 8, 2022
+ *      Author: Admin
+ */
+#include "global.h"
+
+UART_HandleTypeDef huart2;
+ADC_HandleTypeDef hadc1;
+
+enum status state = INIT;
+

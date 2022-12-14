@@ -1,0 +1,11 @@
+/*
+ * global.c
+ *
+ *  Created on: Dec 8, 2022
+ *      Author: Admin
+ */
+#include "global.h"
+
+UART_HandleTypeDef huart2;
+
+

@@ -1,0 +1,13 @@
+/*
+ * fsm_uart_communication.h
+ *
+ *  Created on: Dec 8, 2022
+ *      Author: Admin
+ */
+
+#ifndef INC_FSM_UART_COMMUNICATION_H_
+#define INC_FSM_UART_COMMUNICATION_H_
+
+
+
+#endif /* INC_FSM_UART_COMMUNICATION_H_ */

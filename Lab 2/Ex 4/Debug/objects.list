@@ -1,5 +1,5 @@
-"./Core/Src/HARDWARECONTROL.o"
-"./Core/Src/LED.o"
+"./Core/Src/display.o"
+"./Core/Src/init.o"
 "./Core/Src/main.o"
 "./Core/Src/stm32f1xx_hal_msp.o"
 "./Core/Src/stm32f1xx_it.o"

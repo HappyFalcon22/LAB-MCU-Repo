@@ -1,0 +1,13 @@
+/*
+ * buzzer.h
+ *
+ *  Created on: Dec 9, 2022
+ *      Author: Admin
+ */
+
+#ifndef INC_BUZZER_H_
+#define INC_BUZZER_H_
+
+extern int
+
+#endif /* INC_BUZZER_H_ */
